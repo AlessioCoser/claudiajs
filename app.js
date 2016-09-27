@@ -2,12 +2,9 @@
 
 var ApiBuilder = require('claudia-api-builder');
 var api = new ApiBuilder();
-
-var index = require('./routes/index')
-var hello = require('./routes/hello')
+var routes = require('./routes')
 
 module.exports = api;
 
-api.get('/', index(api));
-api.get('/hello', hello(api));
+routes(api)
 
