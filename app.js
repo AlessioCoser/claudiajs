@@ -8,6 +8,6 @@ var hello = require('./routes/hello')
 
 module.exports = api;
 
-api.get('/', index);
-api.get('/hello', hello);
+api.get('/', index(api));
+api.get('/hello', hello(api));
 
