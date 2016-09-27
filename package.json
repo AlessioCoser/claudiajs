@@ -1,0 +1,17 @@
+{
+  "name": "claudiajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "local.js",
+  "scripts": {
+    "start":   "node local.js",
+    "test":    "echo \"Error: no test specified\" && exit 1",
+    "create":  "AWS_PROFILE=alessio claudia create --region eu-west-1 --api-module app",
+    "deploy":  "AWS_PROFILE=alessio claudia update",
+    "release": "AWS_PROFILE=alessio claudia set-version --version"
+  },
+  "author": "Alessio Coser",
+  "dependencies": {
+    "claudia-api-builder": "^2.0.0"
+  }
+}
