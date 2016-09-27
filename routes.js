@@ -1,9 +1,11 @@
 'use strict'
-
-var index = require('./routes/index')
-var hello = require('./routes/hello')
+var fs = require( 'fs' );
+var path = require( 'path' );
 
 module.exports = function(api) {
-  api.get('/', index(api));
-  api.get('/hello', hello(api));
+  var folder = './routes/';
+  fs.readdirSync(folder).forEach( function( file ) {
+    var route = require(path.resolve( folder + file ));
+    api[route.method](route.path, route.handler(api));
+  });
 }
