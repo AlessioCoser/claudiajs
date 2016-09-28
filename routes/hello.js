@@ -1,17 +1,9 @@
 'use strict'
 
-var Request = require('../lib/request');
-var Response = require('../lib/response');
+var handler = function(request, response) {
+  let name = request.queryString.name || "mondo";
 
-var handler = function(api) {
-  return function(request, response) {
-    let req = Request(request);
-    let res = Response(response, api);
-
-    let name = req.queryString.name || "mondo";
-
-    return res.send('hello <strong>' + name + '</strong>', 'text/html', 200)
-  }
+  return response.send('hello <strong>' + name + '</strong>', 'text/html', 200)
 }
 
 module.exports = {
