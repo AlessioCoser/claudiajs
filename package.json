@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node local.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "AWS_PROFILE=alessio claudia create --region eu-west-1 --api-module app",
-    "deploy": "AWS_PROFILE=alessio claudia update",
-    "release": "AWS_PROFILE=alessio claudia set-version --version"
+    "create": "claudia create --region eu-west-1 --api-module app",
+    "deploy": "claudia update",
+    "release": "claudia set-version --version"
   },
   "author": "Alessio Coser",
   "dependencies": {
