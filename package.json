@@ -4,8 +4,11 @@
   "description": "",
   "main": "local.js",
   "scripts": {
+    "test": "npm run test:unit; npm run test:integration",
+    "test:unit": "echo 'not yet implemented'",
+    "test:integration": "jasmine test.js",
     "start": "node local.js",
-    "test": "claudia test-lambda",
+    "execute": "claudia test-lambda",
     "create": "claudia create --region eu-west-1 --api-module app",
     "deploy": "claudia update",
     "release": "claudia set-version --version",
@@ -14,6 +17,6 @@
   "author": "Alessio Coser",
   "dependencies": {
     "claudia-api-builder": "^2.0.0",
-    "express": "^4.14.0"
+    "jasmine": "^2.5.2"
   }
 }
