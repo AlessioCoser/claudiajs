@@ -5,10 +5,11 @@
   "main": "local.js",
   "scripts": {
     "start": "node local.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "claudia test-lambda",
     "create": "claudia create --region eu-west-1 --api-module app",
     "deploy": "claudia update",
-    "release": "claudia set-version --version"
+    "release": "claudia set-version --version",
+    "destroy": "claudia destroy"
   },
   "author": "Alessio Coser",
   "dependencies": {
