@@ -2,15 +2,15 @@
   "name": "claudiajs",
   "version": "1.0.0",
   "description": "",
-  "main": "local.js",
+  "main": "index.js",
   "scripts": {
     "node": "node",
     "test": "npm run test:unit; npm run test:integration",
     "test:unit": "echo 'not yet implemented'",
     "test:integration": "jasmine test.js",
-    "start": "node local.js",
+    "start": "node $npm_package_main",
     "execute": "claudia test-lambda",
-    "create": "claudia create --region eu-west-1 --api-module app",
+    "create": "claudia create --region eu-west-1 --api-module $npm_package_main",
     "deploy": "claudia update",
     "release": "claudia set-version --version",
     "destroy": "claudia destroy"
