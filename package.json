@@ -4,6 +4,7 @@
   "description": "",
   "main": "local.js",
   "scripts": {
+    "node": "node",
     "test": "npm run test:unit; npm run test:integration",
     "test:unit": "echo 'not yet implemented'",
     "test:integration": "jasmine test.js",
@@ -18,5 +19,17 @@
   "dependencies": {
     "claudia-api-builder": "^2.0.0",
     "jasmine": "^2.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlessioCoser/claudiajs.git"
+  },
+  "keywords": [
+    "claudiajs"
+  ],
+  "homepage": "https://github.com/AlessioCoser/claudiajs#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlessioCoser/claudiajs/issues"
   }
 }
