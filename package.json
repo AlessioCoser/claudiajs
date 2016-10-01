@@ -31,7 +31,6 @@
     "claudia-api-builder": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "^3.1.0",
-    "sinon": "^1.17.6"
+    "mocha": "^3.1.0"
   }
 }
