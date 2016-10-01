@@ -2,21 +2,35 @@
   "name": "claudiajs",
   "version": "1.0.0",
   "description": "",
-  "main": "local.js",
+  "main": "index.js",
   "scripts": {
-    "test": "npm run test:unit; npm run test:integration",
-    "test:unit": "echo 'not yet implemented'",
-    "test:integration": "jasmine test.js",
-    "start": "node local.js",
+    "node": "node",
+    "test": "mocha --recursive",
+    "test:watch": "npm t -- -w",
+    "start": "node $npm_package_main",
     "execute": "claudia test-lambda",
-    "create": "claudia create --region eu-west-1 --api-module app",
+    "create": "claudia create --region eu-west-1 --api-module $npm_package_main",
     "deploy": "claudia update",
     "release": "claudia set-version --version",
     "destroy": "claudia destroy"
   },
   "author": "Alessio Coser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlessioCoser/claudiajs.git"
+  },
+  "keywords": [
+    "claudiajs"
+  ],
+  "homepage": "https://github.com/AlessioCoser/claudiajs#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlessioCoser/claudiajs/issues"
+  },
   "dependencies": {
-    "claudia-api-builder": "^2.0.0",
-    "jasmine": "^2.5.2"
+    "claudia-api-builder": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.0"
   }
 }
