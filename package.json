@@ -6,6 +6,7 @@
   "scripts": {
     "node": "node",
     "test": "mocha --recursive",
+    "test:watch": "npm t -- -w",
     "start": "node $npm_package_main",
     "execute": "claudia test-lambda",
     "create": "claudia create --region eu-west-1 --api-module $npm_package_main",
