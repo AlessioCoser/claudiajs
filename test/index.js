@@ -1,44 +1,17 @@
-var assert = require('assert')
-  , lambda = require('..')
-  , sinon = require('sinon')
+describe('/', function(){
 
-describe('home route', function(){
-  var context = {done: Function.prototype}
-  sinon.spy(context, 'done')
-  it('returns a `hello world` string', () => {
-    var event = {
-      requestContext: {
-        resourcePath: '/',
-        httpMethod: 'GET'
-      },
-      queryStringParameters: {
-        'name': '12345'
-      }
-    }
-    return lambda.proxyRouter(event, context).then(function(){
-      assert.equal(context.done.args.shift().pop().body, '"hello world"')
+  var equal = require('assert').equal
+  var get = require('./util/request').get
+
+  it('responds with a `hello world` string', function(){
+    return get('/').then(function(res){
+      equal(res.statusCode, 200)
+      equal(res.body, '"hello world"')
     })
   })
-})
-
-describe('facebook token verification', function(){
-  var context = {done: Function.prototype}
-  sinon.spy(context, 'done')
-  it('returns hub challenge if the tokens match', () => {
-    var event = {
-      requestContext: {
-        resourcePath: '/hello',
-        httpMethod: 'GET'
-      },
-      queryStringParameters: {
-        'name': '12345'
-      },
-      stageVariables: {
-        facebookVerifyToken: '12345'
-      }
-    }
-    return lambda.proxyRouter(event, context).then(function(){
-      assert.equal(context.done.args.shift().pop().body, 'hello <strong>12345</strong>')
+  it('fails for non recognized urls', function(){
+    return get('/foo/*/bar').catch(function(err){
+      equal(err, 'no handler for GET /foo/*/bar')
     })
   })
 })
