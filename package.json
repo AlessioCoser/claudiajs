@@ -2,7 +2,7 @@
   "name": "claudiajs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "node": "node",
     "test": "mocha --recursive",
@@ -12,7 +12,7 @@
     "create": "claudia create --region eu-west-1 --api-module $npm_package_main",
     "deploy": "claudia update",
     "release": "claudia set-version --version",
-    "destroy": "claudia destroy"
+    "destroy": "claudia destroy; rm claudia.json;"
   },
   "author": "Alessio Coser",
   "repository": {
