@@ -2,17 +2,17 @@
   "name": "claudiajs",
   "version": "1.0.0",
   "description": "",
-  "main": "index",
+  "main": "index.js",
   "scripts": {
     "node": "node",
     "test": "mocha --recursive",
     "test:watch": "npm t -- -w",
     "start": "node $npm_package_main",
     "execute": "claudia test-lambda",
-    "create": "claudia create --region eu-west-1 --api-module $npm_package_main",
+    "create": "claudia create --region eu-west-1 --api-module index",
     "deploy": "claudia update",
     "release": "claudia set-version --version",
-    "destroy": "claudia destroy; rm claudia.json;"
+    "destroy": "claudia destroy"
   },
   "author": "Alessio Coser",
   "repository": {
@@ -31,6 +31,7 @@
     "claudia-api-builder": "^2.0.0"
   },
   "devDependencies": {
+    "claudia": "^2.0.2",
     "mocha": "^3.1.0"
   }
 }
